@@ -26,16 +26,9 @@ public class ControlLibererEtal {
 	 * 		[4] : quantité de produit vendu
 	 */
 	public String[] libererEtal(String nomVendeur) {
-		String[] donneesEtal = new String[5];
 		Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
-		Boolean occupe = etal.isEtalOccupe();
-		donneesEtal[0] = occupe.toString();
-		donneesEtal[1] = nomVendeur;
-		String produit = etal.getProduit();
-		donneesEtal[2] = produit;
-		Integer nbProduit = etal.getQuantite();
-		donneesEtal[3] = nbProduit.toString();
-		//A FINIR
+		String[] donneesEtal = etal.etatEtal();
+		etal.libererEtal();
 		return donneesEtal;
 	}
 
