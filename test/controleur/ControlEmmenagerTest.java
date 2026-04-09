@@ -30,24 +30,24 @@ class ControlEmmenagerTest {
 	void testIsHabitant() {
 		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
 		controlEmmenager.ajouterGaulois("Bonemine", 10);
-		assertTrue(controlEmmenager.isHabitant("Bonemine"));
-		assertFalse(controlEmmenager.isHabitant("Existe pas"));
+		assertTrue(controlEmmenager.isHabitant("Bonemine"),"Gaulois Bonemine est un habitant");
+		assertFalse(controlEmmenager.isHabitant("Existe pas"),"N'existe pas");
 		controlEmmenager.ajouterDruide("Panoramix", 10, 1, 5);
-		assertTrue(controlEmmenager.isHabitant("Panoramix"));
+		assertTrue(controlEmmenager.isHabitant("Panoramix"),"Druide Panoramix est un habitant");
 	}
 
 	@Test
 	void testAjouterDruide() {
 		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
 		controlEmmenager.ajouterDruide("Panoramix", 10, 1, 5);
-		assertTrue(controlEmmenager.isHabitant("Panoramix"));
+		assertTrue(controlEmmenager.isHabitant("Panoramix"),"Duide Panoramix à bien été ajouté");
 	}
 
 	@Test
 	void testAjouterGaulois() {
 		ControlEmmenager controlEmmenager = new ControlEmmenager(village);
 		controlEmmenager.ajouterGaulois("Asterix", 13);
-		assertTrue(controlEmmenager.isHabitant("Asterix"));
+		assertTrue(controlEmmenager.isHabitant("Asterix"),"Gaulois Asterix à bien été ajouté");
 	}
 
 }
